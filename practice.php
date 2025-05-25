@@ -550,6 +550,24 @@ function productExceptSelf(array $nums): array {
     }
 						}
 
+		function binarySearch(){
+						$array = [-1, 0, 3, 4, 5, 9, 12];
+						$target = 5;
+						$start = 0;
+						$end = count($array) - 1;
+						while($start <= $end){
+							$mid = $start + ($end - $start) / 2;
+							if($target > $array[$mid]){
+								$start = $mid + 1;
+							} elseif($target < $array[$mid]){
+								$end = $mid - 1;
+							}else{
+								return $mid;
+							}
+						}
+						return -1;
+					}
+
 
 }
 ?>
