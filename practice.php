@@ -568,6 +568,14 @@ function productExceptSelf(array $nums): array {
 						return -1;
 					}
 
+		function isPalindrome($str) {
+							$cleanStr = strtolower(str_replace(' ', '', $str));
+							 // Reverse the string
+    						$reversed = strrev($cleanStr);
+							// Check if original == reversed
+    						return $cleanStr === $reversed;
+					}
+
 
 }
 ?>
