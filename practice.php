@@ -530,6 +530,26 @@ function productExceptSelf(array $nums): array {
     return $ans;
 }
 
+      	function twoSum() {
+							$nums = [2,15,11,7];
+							$target = 9;
+							for($i=0; $i<count($nums); $i++){
+								 for($j=$i + 1; $j<=count($nums); $j++){
+									  $get_sum = $nums[$i] + $nums[$j];
+									  if($get_sum == $target){
+										$result = [$i, $j];
+										break 2;
+									  }
+								 }
+							}
+							
+    if (!empty($result)) {
+       return $result;
+    } else {
+        return false;
+    }
+						}
+
 
 }
 ?>
