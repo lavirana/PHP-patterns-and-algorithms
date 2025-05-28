@@ -580,7 +580,7 @@ function productExceptSelf(array $nums): array {
 	* $array = [0,2,3,2,5,6,12];
     	* $target = 12;
 	*/
-		function binarySearch($array, $target){
+		function binarySearch2($array, $target){
 		    $start = 0;
 		    $end = count($array) - 1;
 		
