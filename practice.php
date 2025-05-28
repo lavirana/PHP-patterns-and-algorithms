@@ -576,6 +576,28 @@ function productExceptSelf(array $nums): array {
     						return $cleanStr === $reversed;
 					}
 
+	/**
+	* $array = [0,2,3,2,5,6,12];
+    	* $target = 12;
+	*/
+		function binarySearch($array, $target){
+		    $start = 0;
+		    $end = count($array) - 1;
+		
+		    while($start <= $end){
+		        $mid = ($start + $end) / 2;
+		
+		        if($target > $array[$mid]){
+		            $start = $mid + 1;
+		        }else if($target < $array[$mid]){
+		            $end = $mid - 1;
+		        }else{
+		            return $mid;
+		        }
+		    }
+		return -1;
+		}
+
 
 }
 ?>
