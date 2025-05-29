@@ -625,5 +625,21 @@ function productExceptSelf(array $nums): array {
 	    }
 	    return -1;    
 	}
+
+		function peakIndexInMountainArray($arr) {
+		        $start = 1;
+		        $end = count($arr) - 2;
+		    	while($start <= $end){
+		    		$mid = intval($start + ($end - $start) / 2); 
+		    			if($arr[$mid - 1] < $arr[$mid] && $arr[$mid] > $arr[$mid + 1]){
+					        return $mid;
+					    }elseif($arr[$mid - 1] < $arr[$mid]){ //right
+					        $start = $mid + 1;
+					}else{
+					        $end = $mid - 1;
+				}
+			  } 
+		  return - 1;
+		}
 }
 ?>
