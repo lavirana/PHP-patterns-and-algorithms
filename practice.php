@@ -641,5 +641,24 @@ function productExceptSelf(array $nums): array {
 			  } 
 		  return - 1;
 		}
+
+	$sentence = "The quick brown fox jumps over the lazy dog";
+
+function detect_pangram($string) { 
+    $alphabet = range('a', 'z');
+    $string = strtolower($string);
+    foreach ($alphabet as $char) {
+        if (strpos($string, $char) === false) {
+            return false; 
+        }
+        }
+        return true; 
+        }
+
+if (detect_pangram($sentence)) {
+    echo "The sentence is a pangram";
+    } else {
+        echo "The sentence is not a pangram";
+    }
 }
 ?>
