@@ -661,8 +661,6 @@ function detect_pangram($string) {
          //    echo "The sentence is not a pangram";
          // }
 
-	//A Narcissistic Number (or Armstrong Number) is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
-
 //For example, take 153 (3 digits), which is narcissistic:
 //1^3 + 5^3 + 3^3 = 1 + 125
 //+ 27 = 153
@@ -681,9 +679,6 @@ function narcissistic(int $number){
         return false;
     }
   }
-
-	//Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
-//example - 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit, there are 3 multiplications)
 
 function persistence(int $num): int {
     $sum = 0;
