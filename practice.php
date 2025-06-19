@@ -768,4 +768,20 @@ class Practice
 
         return $arr;
     }
+
+    function isDuodigit($number): string {
+    // Convert number to string and remove minus sign if negative
+    $str = strval(abs($number));
+
+    // Get unique digits
+    $uniqueDigits = array_unique(str_split($str));
+
+    // Check count of unique digits
+    if (count($uniqueDigits) <= 2) {
+        return "y";
+    } else {
+        return "n";
+    }
+}
+
 }
