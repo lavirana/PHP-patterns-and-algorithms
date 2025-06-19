@@ -784,4 +784,18 @@ class Practice
     }
 }
 
+function minSubsequencesWithMaxDiffK(array $nums, int $k): int {
+    sort($nums);
+    $count = 1; 
+    $minVal = $nums[0];
+
+    foreach ($nums as $num) {
+        if ($num - $minVal > $k) {
+            $count++;
+            $minVal = $num;
+        }
+    }
+    return $count;
+}
+
 }
