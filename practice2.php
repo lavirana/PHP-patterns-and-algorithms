@@ -1,9 +1,9 @@
+<?php
 #######################################################################################################################
 
 //binary search 
 
 function binarys($ar, $target){
-
 $c_s = count($ar);
 $start = 0; 
 $end = $c_s - 1;   
@@ -24,8 +24,8 @@ $ar = array(-1, 0, 3, 4, 5, 9, 12);
 $target = 12;
 
 $rs = binarys($ar, $target);
-//print_r($rs);
-//die();
+print_r($rs);
+
 
 #########################################################################################################################
 
@@ -38,8 +38,8 @@ for($d=0; $d<$size_lr; $d++){
         $max = $lr_array[$d];
     }
 }
-//print_r($max);
-//die();
+print_r($max);
+
 
 #########################################################################################################################
 
@@ -53,8 +53,8 @@ for($d=0; $d<$size_sm; $d++){
         $min = $sm_array[$d];
     }
 }
-//print_r($min);
-//die();
+print_r($min);
+
 #########################################################################################################################
 
 //array reverse //
@@ -73,7 +73,7 @@ while($start < $end){
     $start++;
     $end--;
 }
-//print_r($r_array);
+print_r($r_array);
 
 #########################################################################################################################
 //linear search
@@ -83,7 +83,7 @@ while($start < $end){
 
  for($f=0; $f< count($search_ar); $f++){
     if($search_ar[$f] == $target_val){
-         //print_r($f); exit();
+         print_r($f); exit();
     }
  }
 
@@ -102,8 +102,8 @@ $size = count($sort_array);
         }
     }
 }
-//print_r($sort_array);
-//die();
+print_r($sort_array);
+
 #########################################################################################################################
 
  # product of array except self
@@ -119,8 +119,8 @@ $size = count($sort_array);
         }
         $resl[$i] = $pp;
     }
-    //echo'<pre>';
-    //print_r($resl);
+    
+    print_r($resl);
 #########################################################################################################################
 
 //Check if the array is already sorted
@@ -133,9 +133,9 @@ for($f=0; $f<count($ar) - 1; $f++){
      }
 }
 if ($isSorted) {
-   // echo "Array is sorted in ascending order.";
+    echo "Array is sorted in ascending order.";
 } else {
-   // echo "Array is not sorted.";
+    echo "Array is not sorted.";
 }
 #########################################################################################################################
 
@@ -151,7 +151,7 @@ for ($i = 0; $i < $size - 1; $i++){
         }
     }
 }
-//echo "Kth Smallest: " . $ar[$k - 1];
+echo "Kth Smallest: " . $ar[$k - 1];
 #########################################################################################################################
 
 $sort_array = array('355','45','6');
@@ -250,7 +250,7 @@ $right = $size_p  - 1;
 while($left < $right){
     $current_sum = $array_p[$left] + $array_p[$right];
     if($current_sum == $target_p){
-        //echo "Pair found: (" . $array_p[$left] . ", " . $array_p[$right] . ")";
+        echo "Pair found: (" . $array_p[$left] . ", " . $array_p[$right] . ")";
         break;
     } elseif($current_sum < $target_p){
         $left++;
@@ -285,21 +285,20 @@ for($g=0; $g < $size_s; $g++){
     }
 }
 
-//print_r($count);
+print_r($count);
 
 #########################################################################################################################
 
 //Move all zeros to end
 $ar_m = array(1, 0, 3, 0, 5);
 $size_m = count($ar_m);
-$j = 0;  // Pointer जो ये track करेगा कि अगला non-zero element कहां रखना है
+$j = 0;  
 for ($i = 0; $i < $size_m; $i++) {
         if($ar_m[$i] != 0){
-                   // agar current element zero nahi hai, to usse jth position pe swap karo
             $temp = $ar_m[$i];
             $ar_m[$i] = $ar_m[$j];
             $ar_m[$j] = $temp;
-            $j++;  // next non-zero ke liye index increase karo
+            $j++; 
         }
 }
 //print_r($ar_m);
@@ -338,3 +337,5 @@ if($current_sum == $k){
         }
 }
 #########################################################################################################################
+
+?>
