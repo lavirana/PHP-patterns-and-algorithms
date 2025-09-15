@@ -189,4 +189,22 @@ foreach($words as $values){
 }
 echo implode(" ", $final_word) . "\n\n";
 
+// --------------------------------------------
+
+// Implement your own version of strpos().
+
+    $check = "Hello my name is ashish rana"; 
+    $search = "ashish";
+    $string_length = strlen($check);
+    $search_length = strlen($search);
+    if ($needle_len === 0) {
+       die("Search string is empty");
+    }
+        for($f = 0; $f <= $string_length - $search_length; $f++){
+            $substr = substr($check, $f, $search_length);
+            if ($substr === $search) {
+                print_r($f);
+            }
+        }
+
 ?>
