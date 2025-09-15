@@ -206,5 +206,44 @@ echo implode(" ", $final_word) . "\n\n";
                 print_r($f);
             }
         }
+// --------------------------------------------
+
+
+// Implement your own version of strstr().
+
+    $check = "Hello my name is ashish rana"; 
+    $search = "is ashis";
+    $string_length = strlen($check);
+    $search_length = strlen($search);
+    if ($needle_len === 0) {
+       die("Search string is empty");
+    }
+        for($f = 0; $f <= $string_length - $search_length; $f++){
+            $substr = substr($check, $f, $search_length);
+            if ($substr === $search) {
+               // print_r($substr);
+            }
+        }
+        
+// --------------------------------------------
+
+// Rotate a string left by n characters.
+
+$string = "Hello my name is ashish rana";
+$n = 5; // Number of characters to rotate
+
+$res = "";
+$res2 = "";
+for($f=0; $f<strlen($string); $f++){
+    if($f >= $n){
+        $res .= $string[$f];
+    }else{
+        $res2 .= $string[$f];
+    }
+}
+$final_res = $res . $res2;
+print_r($final_res);
+
+
 
 ?>
