@@ -338,4 +338,52 @@ if($current_sum == $k){
 }
 #########################################################################################################################
 
+Question: Find Divisible Pairs in an Array
+Problem Statement
+
+You are given an array of integers and a number k.
+Your task is to count how many pairs of numbers in the array have a sum that is divisible by k.
+
+A pair (i, j) is valid if:
+
+i < j
+
+(arr[i] + arr[j]) is divisible by k
+
+Example Input
+arr = [5, 9, 10, 7, 4]
+k = 2
+
+Output : 4
+
+Explanation:
+The valid pairs are:
+
+(5, 9) → 14 % 2 == 0  
+(5, 7) → 12 % 2 == 0  
+(9, 7) → 16 % 2 == 0  
+(10, 4) → 14 % 2 == 0  
+
+
+Solution:
+
+<?php
+$ar = [5, 9, 10, 7, 4];
+$k = 2;
+$count = 0;
+
+for ($i = 0; $i < count($ar); $i++) {
+    for ($j = $i + 1; $j < count($ar); $j++) {
+        if (($ar[$i] + $ar[$j]) % $k == 0) {
+            $count++;
+        }
+    }
+}
+
+echo "Number of divisible pairs: $count";
+#########################################################################################################################
+
+
+
+
 ?>
