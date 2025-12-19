@@ -244,6 +244,37 @@ for($f=0; $f<strlen($string); $f++){
 $final_res = $res . $res2;
 print_r($final_res);
 
+// ----------------------------------------------
+
+// Have the function LongestWord(sen) take the sen parameter being passed and return the longest word in the string. 
+// If there are two or more words that are the same length, return the first word from the string with that length.
+// Ignore punctuation and assume sen will not be empty. Words may also contain numbers, for example "Hello world123 567"
+
+function LongestWord($sen) {
+
+    // Remove punctuation (keep letters, numbers, spaces)
+    $clean_string = preg_replace("/[^a-zA-Z0-9 ]/", "", $sen);
+
+    // Split into words
+    $words = explode(" ", $clean_string);
+
+    $longestWord = "";
+    $maxLength = 0;
+
+    foreach ($words as $word) {
+        $length = strlen($word);
+
+        // If longer than previous max, update
+        if ($length > $maxLength) {
+            $maxLength = $length;
+            $longestWord = $word;
+        }
+    }
+
+    return $longestWord;
+}
+
+
 
 
 ?>
