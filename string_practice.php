@@ -274,7 +274,26 @@ function LongestWord($sen) {
     return $longestWord;
 }
 
+//Find longest word in a string - 2
 
 
+$ch = "I am learning CodeIgniter in Mohali";
 
+$string_to_array = explode(' ', $ch);
+
+$max_count = 0;
+$winner = "";
+
+foreach($string_to_array as $val){
+      $count_length[$val] = strlen($val);
+      if($count_length[$val] > $max_count){
+          $max_count = $count_length[$val];
+          $winner = $val;
+      }
+}
+
+
+echo $winner;
+
+// ----------------------------------------------
 ?>
