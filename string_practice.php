@@ -296,4 +296,23 @@ foreach($string_to_array as $val){
 echo $winner;
 
 // ----------------------------------------------
+
+
+//Count uppercase and lowercase letters
+
+
+$string = "Hello Mohali";
+
+$lower_count = 0;
+$upper_count = 0;
+for($f=0; $f < strlen($string) - 1; $f++){
+     if(ctype_upper($string[$f])){
+        $upper_count++;
+     }elseif(ctype_lower($string[$f])){
+         $lower_count++;
+     }
+}
+
+echo 'Total Lower Case words are <strong>'. $lower_count . '</strong> Total Upper Case words are <strong>' . $upper_count . '</strong>';
+
 ?>
