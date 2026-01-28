@@ -315,4 +315,29 @@ for($f=0; $f < strlen($string) - 1; $f++){
 
 echo 'Total Lower Case words are <strong>'. $lower_count . '</strong> Total Upper Case words are <strong>' . $upper_count . '</strong>';
 
+// ----------------------------------------------
+
+
+//Given a string s, find the length of the longest substring without duplicate characters.
+
+$s = "abcabcbb";
+$length = strlen($s);
+$maxLength = 0;
+
+for ($i = 0; $i < $length; $i++) {
+    $seen = [];
+    $currentLength = 0;
+        for ($j = $i; $j < $length; $j++) {
+            if (isset($seen[$s[$j]])) {
+                break; 
+            }
+            $seen[$s[$j]] = true;
+            $currentLength++;
+        }
+        if ($currentLength > $maxLength) {
+            $maxLength = $currentLength;
+        }
+}
+echo $maxLength;
+
 ?>
