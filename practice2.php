@@ -384,6 +384,53 @@ echo "Number of divisible pairs: $count";
 #########################################################################################################################
 
 
+//Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+$n = 3;
+$queue = [];
+$result = [];
+
+/*
+ queue item structure:
+ [
+   'str' => current string,
+   'open' => open brackets count,
+   'close' => close brackets count
+ ]
+*/
+
+$queue[] = ['str' => '', 'open' => 0, 'close' => 0];
+    for ($i = 0; $i < count($queue); $i++) {
+
+        $current = $queue[$i];
+
+        $str = $current['str'];
+        $open = $current['open'];
+        $close = $current['close'];
+    
+            if ($open == $n && $close == $n) {
+                $result[] = $str;
+                continue;
+            }
+
+            if ($open < $n) {
+                $queue[] = [
+                    'str' => $str . '(',
+                    'open' => $open + 1,
+                    'close' => $close
+                ];
+            }
+            if ($close < $open) {
+                $queue[] = [
+                    'str' => $str . ')',
+                    'open' => $open,
+                    'close' => $close + 1
+                ];
+            }
+
+    }
+    print_r($result);
+#########################################################################################################################
 
 
 ?>
