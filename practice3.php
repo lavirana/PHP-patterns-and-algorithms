@@ -1,4 +1,94 @@
 
+// ======================================================================================================
+//remove duplicate elements from an array
+$array = [2,4,5,5,7,8,9,2];
+$result = [];
+for($g=0; $g<count($array) - 1; $g++){
+if(!in_array($array[$g],$result)){
+    $result[] = $array[$g];
+ }
+}
+echo'<pre>'; print_r($result);
+echo'ash';
+
+// ======================================================================================================
+
+// check if two strings are anagrams.
+
+$str1 = "listen";
+$str2 = "silent";
+
+$arr1 = str_split($str1);
+$arr2 = str_split($str2);
+
+sort($arr1);
+sort($arr2);
+
+if ($arr1 == $arr2) {
+    echo "Anagram";
+} else {
+    echo "Not Anagram";
+}
+
+// ======================================================================================================
+
+
+// find missing and duplicate
+$array = [1, 5, 2, 2, 4, 5];
+sort($array);
+
+for($g=0; $g<count($array) - 1; $g++){
+    if($array[$g] + 1 != $array[$g + 1]){
+        $missing = $array[$g] + 1;
+        echo "Missing number: " . $missing; 
+    }
+    if($array[$g] == $array[$g + 1]){
+        $duplicate = $array[$g];
+        echo "Duplicate number: " . $duplicate;
+    }
+}
+
+// ======================================================================================================
+
+// find the missing number in a range from 1 to N
+
+$array = [1, 2, 4, 5];
+$n = 5;
+
+for($g=0; $g<count($array) - 1; $g++){
+    if($array[$g] + 1 != $array[$g + 1]){
+        $missing = $array[$g] + 1;
+        echo "Missing number: " . $missing;
+    }
+}
+
+
+// ======================================================================================================
+
+//Ek sorted array hai jisme numbers repeat ho rahe hain. Aapko number 5 ka pehla aur aakhri index dhoondna hai.
+
+//Input:
+$arr = [1, 2, 5, 5, 5, 8, 9, 10];
+$target = 5;
+
+$first = -1;
+$second = -1;
+
+for ($i = 0; $i < count($arr); $i++) {
+     if($arr[$i] == $target){
+        
+        if($first == -1){
+            $first = $i;
+        }
+
+    $last = $i;
+     }
+}
+echo "First Index: " . $first . "<br>";
+echo "Last Index: " . $last;
+
+// ======================================================================================================
+
 // count the frequency of elements in an array.
 
 $array = [1, 2, 2, 3, 1, 1];
