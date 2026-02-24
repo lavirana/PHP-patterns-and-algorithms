@@ -1,4 +1,23 @@
+// ======================================================================================================
+// check if the number is Armstrong number.
 
+function check_armstrong($number){
+   $digits = str_split($number);
+   $count = count($digits);
+   $res = 0;
+
+   for($f=0; $f<=$count - 1; $f++){
+    $sum += pow($digits[$i], $count);
+   }
+   if($sum == $number){
+        return "Armstrong Number";
+    } else {
+        return "Not Armstrong";
+    }
+}
+
+$number = 24;
+echo check_armstrong($number);
 // ======================================================================================================
 //remove duplicate elements from an array
 $array = [2,4,5,5,7,8,9,2];
