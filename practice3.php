@@ -1,4 +1,47 @@
 // ======================================================================================================
+
+//Move all zeros to the end of an array.
+
+$array = [3,5,0,4,0,7,0,2,6,0,5,6,9,0,1,2,6,0];
+$count = count($array);
+$postion = 0;
+
+for($f=0; $f<$count - 1; $f++){
+  if($array[$f] != 0){
+      $array[$postion] = $array[$f];
+      $postion++;
+  }
+}
+while($postion < $count){
+    $array[$postion] = 0;
+    $postion++;
+}
+// ======================================================================================================
+//find the intersaction of two arrays.
+
+$array1 = [1, 2, 3, 4, 5];
+$array2 = [3, 4, 5, 6, 7];
+$intersection = [];
+
+foreach($array1 as $value){
+    if(in_array($value, $array2)){
+        $intersection[] = $value;
+    }
+}
+
+// ======================================================================================================
+//Rotate an array to the left by K steps
+//Why we use modulo? - To avoid unnecessary full rotations and handle cases when K is greater than array size.
+
+$arr = [1, 2, 3, 4, 5];
+$k = 2;
+
+$k = $k % count($arr);
+$split_a = array_slice($arr, 0, $k);
+$split_b = array_slice($arr, $k);
+$final_r = array_merge($split_b, $split_a);
+
+// ======================================================================================================
 // check if the number is Armstrong number.
 
 function check_armstrong($number){
