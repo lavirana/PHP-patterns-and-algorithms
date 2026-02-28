@@ -1,3 +1,23 @@
+//Given an array nums of size n, return the majority element.
+
+$nums = [2, 2, 1, 1, 1, 2, 2];
+$check = [];
+$majority = null;
+for($s = 0; $s < count($nums); $s++){
+     if(isset($check[$nums[$s]])){
+        $check[$nums[$s]] = $check[$nums[$s]] + 1;
+     }else{
+        $check[$nums[$s]] = 1;
+     }
+
+}
+foreach($check as $key => $val){
+    if($val > count($nums) / 2){
+        $majority = $key;
+        break;
+    }
+}
+echo "Majority element is: " . $majority;
 // ======================================================================================================
 
 //Move all zeros to the end of an array.
