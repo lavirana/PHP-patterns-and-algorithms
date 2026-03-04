@@ -1,3 +1,42 @@
+
+
+
+//find long palindrome
+function longestPalindrome($s){
+    if(empty($s)) return "";
+
+    $start = 0;
+    $end = 0;
+
+    for($i=0; $i< strlen($s); $i++){
+        // Case 1: Odd length palindrome (like "aba")
+        $len1 = expandAroundCenter($s, $i, $i);
+        // Case 2: Even length palindrome (like "abba")
+        $len2 = expandAroundCenter($s, $i, $i + 1);
+
+        $maxLen = max($len1, $len2);
+
+        if ($maxLen > ($end - $start)) {
+            $start = $i - floor(($maxLen - 1) / 2);
+            $end = $i + floor($maxLen / 2);
+        }
+
+    }
+    return substr($s, $start, $end - $start + 1);
+}
+
+function expandAroundCenter($s, $left, $right){
+    while($left >= 0 && $right < strlen($s) && $s[$left] == $s[$right]){
+        $left--;
+        $right++;
+    }
+    return $right - $left - 1; // Length of the palindrome
+}
+
+$s = "acbbcabba";
+echo longestPalindrome($s);
+// ======================================================================================================
+         
 //Given an array nums of size n, return the majority element.
 
 $nums = [2, 2, 1, 1, 1, 2, 2];
