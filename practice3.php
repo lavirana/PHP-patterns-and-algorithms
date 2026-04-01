@@ -1,3 +1,24 @@
+
+//find largest digit
+//output = 9
+$num6 = 58392;
+$output = 9;
+
+$strNum = (string)$num6;
+$len = strlen($strNum);
+$largest = $strNum[0];
+
+for($s = 0; $s <= $len - 1; $s++){
+
+     if($strNum[$s] > $largest){
+        $largest = $strNum[$s];
+     }
+
+}
+echo $largest;
+// ======================================================================================================
+
+
 //remove a specific digit
 $inp = 123451;
 //remove = 1
