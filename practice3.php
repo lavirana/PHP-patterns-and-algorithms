@@ -1,3 +1,20 @@
+//remove a specific digit
+$inp = 123451;
+//remove = 1
+//output will be 2345
+$strInp2 = (string)$inp;
+$len2 = strlen($strInp2);
+$rm = (string)1;
+$result = "";
+
+for($f=0; $f<= $len2 - 1; $f++){
+     if($strInp2[$f] !== $rm){
+        $result .= $strInp2[$f];
+     }  
+} 
+echo $result;
+// ======================================================================================================
+
 //swap first and last digit only
 $inp = 12345;
 $output = 52341;
