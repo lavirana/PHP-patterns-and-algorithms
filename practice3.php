@@ -1,4 +1,22 @@
+//Replace all 0 with 5
 
+//Input: 1020
+//Output: 1525
+
+$reinp = 1020;
+$strInp = (string)$reinp;
+$len = strlen($strInp);
+$replaceN = 0;
+$withR = 5;
+
+for($s = 0; $s <= $len - 1; $s++){
+     if($strInp[$s] == $replaceN){
+         $strInp[$s] = $withR;
+     }
+}
+echo $strInp;
+  // ======================================================================================================
+   
 //find largest digit
 //output = 9
 $num6 = 58392;
