@@ -1,5 +1,22 @@
+//swap first and last digit only
+$inp = 12345;
+$output = 52341;
+$strInp = (string)$inp;
+$len = strlen($strInp);
+$start = 0;
+$end =  strlen($strInp) - 1;
 
+if($len > 1){
+    $first = $strInp[0];
+    $last = $strInp[$len - 1];
+}
 
+$strInp[0] = $last;
+$strInp[$len - 1] = $first;
+
+echo(int)$strInp;
+
+// ======================================================================================================
 
 //find long palindrome
 function longestPalindrome($s){
