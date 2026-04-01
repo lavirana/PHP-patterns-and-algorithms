@@ -1,3 +1,32 @@
+//convert number to words
+$inpN = 123;
+$strN = (string)$inpN;
+$len = strlen($strN);
+
+
+$wordsMap = [
+    '0' => 'zero',
+    '1' => 'one',
+    '2' => 'two',
+    '3' => 'three',
+    '4' => 'four',
+    '5' => 'five',
+    '6' => 'six',
+    '7' => 'seven',
+    '8' => 'eight',
+    '9' => 'nine'
+];
+
+$output = "";
+for ($i = 0; $i < $len; $i++) {
+    $digit = $strN[$i];
+    $output .= $wordsMap[$digit]." ";
+}
+
+echo $output;
+
+
+
 //Replace all 0 with 5
 
 //Input: 1020
