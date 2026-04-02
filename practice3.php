@@ -1,3 +1,21 @@
+//Remove duplicate characters
+
+// Input: "programming"
+// Output: "progamin"
+
+$inputDup = "programming";
+$res2 = "";
+$cnt = strlen($inputDup);
+for($d=0; $d<$cnt; $d++){
+    $currentChar = $inputDup[$d];
+     if(!str_contains($res2, $currentChar)){
+        $res2 .= $currentChar;
+     }
+}
+
+echo $res2;
+echo "\n";
+  // ======================================================================================================
 //convert number to words
 $inpN = 123;
 $strN = (string)$inpN;
@@ -25,7 +43,7 @@ for ($i = 0; $i < $len; $i++) {
 
 echo $output;
 
-
+  // ======================================================================================================
 
 //Replace all 0 with 5
 
