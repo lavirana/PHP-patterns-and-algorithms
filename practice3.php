@@ -1,3 +1,32 @@
+
+/Longest word in string
+
+// "I love programming"
+// Output: "programming"
+
+$input = "I love programming";
+$expR = explode(" ", $input);
+$cnt = count($expR);
+$result = [];
+
+for($s=0; $s<$cnt; $s++){
+     if(!in_array($expR[$s], $result)){
+        $result[$expR[$s]] = strlen($expR[$s]); 
+     }
+}
+
+$longestW = "";
+$manxLength = 0;
+foreach($result as $word => $length){
+    if($length > $manxLength){
+        $manxLength = $length;
+        $longestW = $word;
+    }
+}
+
+echo $longestW. PHP_EOL;
+    
+ // ======================================================================================================
 //Remove duplicate characters
 
 // Input: "programming"
