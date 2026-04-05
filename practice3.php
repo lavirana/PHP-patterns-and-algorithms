@@ -1,3 +1,40 @@
+// Find second largest in array
+
+// [10,20,4,45,99] → 45
+
+$ar = [10,20,4,45,99];
+$cnt = count($ar);
+for($d=0; $d<$cnt; $d++){
+    for($a=0; $a<$cnt - 1; $a++){
+       if($ar[$a] < $ar[$a + 1]){
+        $swap = $ar[$a];
+        $ar[$a] = $ar[$a + 1];
+        $ar[$a + 1] = $swap;
+       }
+    }
+}
+print_r($ar[1]);
+
+//"First, I will sort the array in descending order (highest to lowest)."
+//"To do this, I use two loops and swap the numbers if the next one is bigger."
+//"Finally, I pick the number at index 1, which is the second position."
+
+
+//second way
+$largest = -1;
+$secondLarget = -1;
+
+foreach($ar as $num){
+    if($num > $largest){
+        $secondLarget = $largest;
+        $largest = $num;
+    }elseif($num > $secondLarget && $num != $largest){
+        $second = $num;
+    }
+}
+echo $second;
+echo "\n";
+//------------------------------------------------------------------------------------------------------------------------
 
 /Longest word in string
 
