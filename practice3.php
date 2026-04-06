@@ -1,3 +1,26 @@
+// Rotate array right by 2
+
+// [1,2,3,4] → [3,4,1,2]
+
+$ar = [1,2,3,4];
+$n = count($ar);
+$k = 2;
+$temp = [];
+
+// We start from index (4 - 2) which is 2. So, index 2 and 3.
+for($f=$n - $k; $f < $n; $f++){
+   $temp[] = $ar[$f]; 
+}
+
+// Step 2: Get the remaining elements from the start
+for ($f = 0; $f < $n - $k; $f++) {
+    $temp[] = $ar[$f];
+}
+
+print_r($temp);
+    
+//------------------------------------------------------------------------------------------------------------------------
+
 // Find second largest in array
 
 // [10,20,4,45,99] → 45
