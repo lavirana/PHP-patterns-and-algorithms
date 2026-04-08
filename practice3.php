@@ -1,4 +1,23 @@
+String compression
 
+//"aaabbc" → "a3b2c1"
+
+$string = "aaabbc";
+$cnt = strlen($string);
+$compressed = "";
+$count = 1;
+
+for ($i = 0; $i < $cnt; $i++) {
+    if($i + 1 < $cnt && $string[$i] == $string[$i + 1]){
+        $count++;
+    } else {
+        $compressed .= $string[$i] . $count;
+        $count = 1;
+    }
+}
+echo $compressed;
+//------------------------------------------------------------------------------------------------------------------------
+        
 // Move negatives to one side
 
 // [1,-2,3,-4,5] → [-2,-4,1,3,5]
