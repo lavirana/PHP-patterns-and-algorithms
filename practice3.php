@@ -1,3 +1,22 @@
+$input = "AAAABBBCCDAABBB";
+
+$split_s = str_split($input);
+$result = [];
+$length = count($split_s);
+$count = 1;
+
+for($i = 0; $i < $length; $i++){
+ if(isset($split_s[$i+1]) && $split_s[$i] == $split_s[$i + 1]){
+    $count++;
+ }else{
+    $result[] = $split_s[$i].$count;
+    $count = 1;
+ }
+}
+echo implode('', $result);
+
+//------------------------------------------------------------------------------------------------------------------------
+   
 String compression
 
 //"aaabbc" → "a3b2c1"
