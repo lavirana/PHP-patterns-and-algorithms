@@ -1,4 +1,5 @@
 $input = "AAAABBBCCDAABBB";
+//output = A4B3C2D1A2B3;
 
 $split_s = str_split($input);
 $result = [];
