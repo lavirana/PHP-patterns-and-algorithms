@@ -1,3 +1,28 @@
+$input = "A4B3C2";
+//Output: "AAAABBBCC"
+
+$result = "";
+$count = strlen($input);
+
+for($a = 0; $a < $count; $a++) {
+    if (ctype_alpha($input[$a])) {
+        $char = $input[$a];
+        $number = "";
+
+        $next = $a + 1;
+        while ($next < $count && is_numeric($input[$next])) {
+            $number .= $input[$next];
+            $next++;
+        }
+        if ($number !== "") {
+            $result .= str_repeat($char, (int)$number);
+        }
+    }
+}
+echo $result;
+
+//------------------------------------------------------------------------------------------------------------------------
+  
 $input = "AAAABBBCCDAABBB";
 //output = A4B3C2D1A2B3;
 
