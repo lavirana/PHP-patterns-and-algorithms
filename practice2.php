@@ -1,4 +1,60 @@
 <?php
+
+// find missing and duplicate
+$arr = [1, 2, 2, 4, 5, 5];
+sort($arr);
+
+$duplicate_number = [];
+$missing_number = [];
+
+for($ff = 0; $ff < count($arr) - 1; $ff++){
+    // if the current number is exactly equal to the NEXT number, it 's a duplicate
+        if($arr[$ff] == $arr[$ff + 1]){
+             //prevent adding the same duplicate multiple time
+             if(!in_array($arr[$ff], $duplicate_number)){
+                $duplicate_number[] = $arr[$ff];
+             }
+        }
+}
+echo'<pre>';
+print_r($duplicate_number);
+
+//1. First we sorted array . Our sorted array is: [1, 2, 2, 4, 5, 5] with total count of 6 elements.
+//Loop1: Finding Duplicates
+//we stop at count($array - 1) (index 4) so that $ff + 1 never shoots past the end of the array.
+//Iteration1 ($ff = 0): Compares $array[0](1) and $array[1](2)    -  check 1 == 2? No. Move on
+//Iteration2 ($ff = 1): Compares $array[1](2) and $array[2](2)   -   check 2 == 2? Yes. 2 is added to $duplicate_number.
+//Iteration3 ($ff == 2): Compares $array[2](2) and $array[3](4)  -  check 2 == 4? No. Move on
+//Iteration 4 ($ff = 3): Compares $array[3] (4) and $array[4] (5)  -   Check: 4 == 5? No. Move on
+//Iteration 5 ($ff = 4): Compares $array[4] (5) and $array[5] (5)   -   Check: 5 == 5? Yes! ➡️ 5 is added to $duplicate_number
+
+
+//Finding Missing Number Only
+//We Loop through the actual values from the minimum (1) to the maximum (5)
+
+$min = $arr[0];
+$max =  $arr[count($arr) - 1];
+
+for($i = $min; $i <= $max; $i++){
+
+    //If the expected number in the sequence is NOT anywhere in our array, it's missing!
+        if(!in_array($i ,$arr)) {
+            $missing_number[] = $i;
+        }
+}
+print_r($missing_number);
+
+//Finding Missing Number
+//Our minimum value is $array[0] (1) and maximum is the last item (5). The loop counter $i represents the numbers we expect to see.
+
+//Iteration 1 ($i = 1): Is 1 inside [1, 2, 2, 4, 5, 5]? Yes.
+//Iteration 2 ($i = 2): Is 2 inside [1, 2, 2, 4, 5, 5]? Yes.
+//Iteration 3 ($i = 3): Is 3 inside [1, 2, 2, 4, 5, 5]? No! ➡️ 3 is added to $missing_number.
+//Iteration 4 ($i = 4): Is 4 inside [1, 2, 2, 4, 5, 5]? Yes.
+//Iteration 5 ($i = 5): Is 5 inside [1, 2, 2, 4, 5, 5]? Yes.
+
+#########################################################################################################################
+
 //binary search 
 
 function binarys($ar, $target){
