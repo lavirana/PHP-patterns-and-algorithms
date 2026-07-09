@@ -1,5 +1,55 @@
 <?php
 
+
+// check if the number is Armstrong number.
+
+//An armstrong number is a number that is equal to the sum of its own digits, 
+//where each digits is raised to the power of the total number of digits.
+//Example :  153
+//It has 3 digits, so raise each digit to the power of 3.
+// 1³ + 5³ + 3³ = 1 + 125 + 27 = 153
+// Since the result is equal to the original number, 153 is a Armstrong number.
+
+
+$num = 370;
+
+// 1. Copy the original number for processing
+$temp = $num;
+$digit_count = 0;
+
+// 2. Count the number of digits without using strlen()
+while ($temp > 0) {
+    $digit_count++;
+    $temp = (int)($temp / 10); // Move to the next digit position
+}
+
+// 3. Reset temp and calculate the sum of digits raised to the power of $digit_count
+$temp = $num;
+$sum = 0;
+
+while ($temp > 0) {
+    $digit = $temp % 10; // Extract the last digit
+    
+    // Calculate $digit raised to the power of $digit_count without using pow()
+    $power_val = 1;
+    for ($i = 0; $i < $digit_count; $i++) {
+        $power_val *= $digit;
+    }
+    
+    $sum += $power_val;
+    $temp = (int)($temp / 10); // Remove the last digit
+}
+
+// 4. Check if the sum matches the original number
+if ($sum == $num) {
+    echo $num . " is an Armstrong number.";
+} else {
+    echo $num . " is not an Armstrong number.";
+}
+
+
+
+
 // find missing and duplicate
 $arr = [1, 2, 2, 4, 5, 5];
 sort($arr);
