@@ -1,5 +1,26 @@
 <?php
 
+$pu = [10,20,30,40];
+//Output: [20,30,40,10]
+
+$temp = $pu[0]; //store the first element
+$count = count($pu);
+
+// Shift every element one position to the left
+for ($i = 0; $i < $count - 1; $i++) {
+    $pu[$i] = $pu[$i + 1];
+}
+
+$pu[$count - 1] = $temp;
+
+//print_r($pu);
+
+// How it works
+
+// Count elements
+// Save the first element in a temporary variables
+// Shift left — loop through the array, copying each element one position to the left ($pu[1] → $pu[0], $pu[2] → $pu[1], etc.).
+// Place the saved first element at the last index — completing the rotation.
 
 // check if the number is Armstrong number.
 
