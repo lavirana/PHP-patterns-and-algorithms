@@ -1,4 +1,48 @@
 <?php
+$p = [10,20,30,40];
+
+//Output: [40,10,20,30]
+$count = count($p);
+$temp =  $p[$count - 1];
+
+// Shift every element one position to the right, starting from the end
+for ($i = $count - 1; $i > 0; $i--) {
+    $p[$i] = $p[$i - 1];
+}
+
+$p[0] = $temp; // place the saved last element at the start
+
+//print_r($p);
+
+//---------------------------------------------------------------------------------------------------------------------------
+//Find Missing Number
+//---------------------------------------------------------------------------------------------------------------------------
+$misinp  = [1,2,3,5,9]; // $misinp is your input array with indexes 0,1,2,3,4 holding values 1,2,3,5,9.
+$count = count($misinp);  // $count tells the loop how far to go (5 elements).
+
+$missing_num = []; // empty array to store missing numbers
+
+$m_count = 0; // manual counter for missing numbers array
+
+for ($i = 0; $i < $count - 1; $i++) {
+    $current = $misinp[$i];
+    $next = $misinp[$i + 1];
+
+      // If there's a gap bigger than 1, loop through every missing number in it
+   if ($next - $current > 1) {
+
+        for ($j = $current + 1; $j < $next; $j++) {
+            $missing_num[$m_count] = $j;
+            $m_count++;
+        }
+        
+    }
+}
+
+print_r($missing_num);
+
+#########################################################################################################################
+
 
 $pu = [10,20,30,40];
 //Output: [20,30,40,10]
